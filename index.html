@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grid Example</title>
+  <style>
+    /* add the CSS code here */
+    .grid-container {
+      display: grid;
+      grid-template-rows: repeat(8, 1fr);
+      grid-gap: 10px;
+    }
+
+    .grid-container > :nth-child(odd) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-container > :nth-child(even) {
+      grid-template-columns: repeat(6, 1fr);
+      background-color: #f5f5f5;
+    }
+
+    .grid-container > * {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .grid-container > :before {
+      content: attr(class);
+      font-weight: bold;
+    }
+
+    .grid-container > :nth-child(odd) h1 {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .grid-container > :nth-child(even) > * {
+      background-color: rgb(
+        ${Math.floor(Math.random() * 256)},
+        ${Math.floor(Math.random() * 256)},
+        ${Math.floor(Math.random() * 256)}
+      );
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="row1">
+      <h1>Row 1</h1>
+      <p>Lorem ipsum dolor.</p>
+    </div>
+    <div class="row2">
+      <h1>Row 2</h1>
+      <p>Lorem ipsum dolor.</p>
+      <p>Sed do eiusmod.</p>
+      <p>Ut enim ad.</p>
+      <p>Duis aute irure.</p>
+      <p>Excepteur sint occaecat.</p>
+    </div>
+    <div class="row3">
+      <h1>Row 3</h1>
+      <p>Lorem ipsum dolor.</p>
+    </div>
+    <div class="row4">
+      <h1>Row 4</h1>
+      <p>Lorem ipsum dolor.</p>
+      <p>Sed do eiusmod.</p>
+      <p>Ut enim ad.</p>
+      <p>Duis aute irure.</p>
+      <p>Excepteur sint occaecat.</p>
+    </div>
+    <div class="row5">
+      <h1>Row 5</h1>
+      <p>Lorem ipsum dolor.</p>
+    </div>
+    <div class="row6">
+      <h1>Row 6</h1>
+      <p>Lorem ipsum dolor.</p>
+      <p>Sed do eiusmod.</p>
+      <p>Ut enim ad.</p>
+      <p>Duis aute irure.</p>
+      <p>Excepteur sint occaecat.</p>
+    </div>
+    <div class="row7">
+      <h1>Row 7</h1>
+      <p>Lorem ipsum dolor.</p>
+    </div>
+    <div class="row8">
+      <h1>Row 8</h1>
+      <p>Lorem ipsum dolor.</p>
+      <p>Sed do eiusmod.</p>
+      <p>Ut enim ad.</p>
+      <p>Duis aute irure.</p>
+      <p>Excepteur sint occaecat.</p>
+    </div>
+  </div>
+</body>
+</html>
